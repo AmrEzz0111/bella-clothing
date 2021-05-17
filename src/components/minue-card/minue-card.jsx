@@ -1,20 +1,28 @@
 import React from "react";
 import "./minue-card.scss";
+import { withRouter } from "react-router-dom";
 
-const MinueCard = ({ title, imageUrl, width, height }) => (
+const MinueCard = ({
+  title,
+  imageUrl,
+  width,
+  history,
+  height,
+  linkUrl,
+  match,
+}) => (
   <div className={`col-${width} g-3`}>
     <div
       className="menu-item d-flex text-center  justify-content-center align-items-center"
       style={{
         height: height,
       }}
+      onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div
         className="background-img"
         style={{
           backgroundImage: `url(${imageUrl})`,
-          backgroundPosition: `center`,
-          backgroundSize: ` cover`,
         }}
       ></div>
       <div className="content">
@@ -25,4 +33,4 @@ const MinueCard = ({ title, imageUrl, width, height }) => (
   </div>
 );
 
-export default MinueCard;
+export default withRouter(MinueCard);

@@ -51,14 +51,8 @@ export default class Directory extends Component {
   render() {
     return (
       <div className="directory-menu row">
-        {this.state.sections.map(({ id, title, imageUrl, width, height }) => (
-          <MinueCard
-            id={id}
-            title={title}
-            imageUrl={imageUrl}
-            width={width}
-            height={height}
-          />
+        {this.state.sections.map(({ id, ...otherSectionsProps }) => (
+          <MinueCard key={id} {...otherSectionsProps} />
         ))}
       </div>
     );
