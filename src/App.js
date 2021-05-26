@@ -1,11 +1,10 @@
 import { Route,Switch } from "react-router";
-import "bootstrap/dist/css/bootstrap.css";
-
 import "./App.css";
 
 import HomePage  from "./pages/homepage/homepage";
 import ShopPage from "./pages/shop/shop_page";
 import NavBar  from "./components/navbar/navbar";
+import Login  from "./pages/login/login";
 
 
 function App() {
@@ -15,6 +14,7 @@ function App() {
       <Switch>
       <Route exact path="/" component={HomePage}/>
       <Route  path="/shop" component={ShopPage}/>
+      <Route  path="/login" component={Login}/>
       </Switch>
     </div>
   )
